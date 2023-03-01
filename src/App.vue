@@ -1,14 +1,18 @@
 <template>
-  <HelloWorld />
+  <Navbar />
+  <router-view />
+  <Footer />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import Navbar from './components/Navbar.vue';
+import Footer from './components/Footer.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Navbar,
+    Footer
   }
 }
 
