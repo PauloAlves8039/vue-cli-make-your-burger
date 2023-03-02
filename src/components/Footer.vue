@@ -1,6 +1,6 @@
 <template>
     <div id="footer">
-      <p>Make Your Burger &copy; 2021</p>
+      <p>Make Your Burger &copy; 2023</p>
     </div>
   </template>
   
@@ -19,9 +19,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      bottom: 0;
       width: 100%;
     }
   </style>
-  Footer
-  © 2023 GitHub, Inc.
