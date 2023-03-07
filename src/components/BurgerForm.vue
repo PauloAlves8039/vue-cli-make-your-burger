@@ -41,6 +41,8 @@
 </template>
   
 <script>
+import { thisExpression } from '@babel/types';
+
 export default {
     name: "BurgerForm",
     data() {
@@ -86,7 +88,15 @@ export default {
         headers: { "Content-Type": "application/json" },
         body: dataJson
       });
+
+      this.toCleanFields();
       
+    },
+    toCleanFields() {
+      this.nome = ""
+      this.carne = ""
+      this.pao = ""
+      this.opcionais = []
     }
     },
     mounted() {
