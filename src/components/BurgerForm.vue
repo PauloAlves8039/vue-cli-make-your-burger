@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>Componente de Mensagem</p>
+        <Message :msg="msg" v-show="msg" />
         <div>
             <form id="burger-form" @submit="createBurger">
                 <div class="input-container">
@@ -41,10 +41,13 @@
 </template>
   
 <script>
-import { thisExpression } from '@babel/types';
+import Message from './Message.vue';
 
 export default {
     name: "BurgerForm",
+    components: {
+      Message
+    },
     data() {
       return {
         paes: null,
@@ -88,6 +91,12 @@ export default {
         headers: { "Content-Type": "application/json" },
         body: dataJson
       });
+
+      const res = await req.json()
+
+      this.msg = `Pedido N° ${res.id} realizado com sucesso!`;
+
+      setTimeout(() => this.msg = "", 3000);
 
       this.toCleanFields();
       
