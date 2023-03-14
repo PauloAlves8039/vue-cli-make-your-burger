@@ -30,7 +30,7 @@
                         <option 
                           v-for="stateIndex in status" 
                           :key="stateIndex.id" 
-                          value="stateIndex.tipo"
+                          :value="stateIndex.tipo"
                           :selected="burger.status == stateIndex.tipo"
                         >
                           {{ stateIndex.tipo }}
@@ -86,9 +86,9 @@ export default {
 
       const res = await req.json();
 
-      this.msg = `Pedido N? ${id} removido!`;
+      this.msg = `Pedido N? ${id} foi removido com sucesso!`;
 
-      setTimeout(() => window.location.reload(), 3600);
+      setTimeout(() => this.msg, 3000);
 
       this.getPedidos();      
     },
@@ -103,8 +103,12 @@ export default {
         headers: { "Content-Type": "application/json" },
         body: dataJson
       });
-      
+
       const res = await req.json();
+
+      this.msg = `Pedido N? ${id} foi atualizado para ${res.status}!`;
+
+      setTimeout(() => this.msg, 3000);
     }
   },
   mounted() {
