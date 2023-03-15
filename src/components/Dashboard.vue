@@ -59,55 +59,45 @@ export default {
       burgers: null,
       burger_id: null,
       status: [],
-      msg: null
+      msg: null,
+      url: "http://localhost:3000"
     }
   },
   methods: {
     async getPedidos() {
-      const req = await fetch("http://localhost:3000/burgers");
-      
+      const req = await fetch(`${this.url}/burgers`);
       const data = await req.json();
-
       this.burgers = data;
 
       this.getStatus();
 
     },
     async getStatus() {
-      const req = await fetch("http://localhost:3000/status");
-
+      const req = await fetch(`${this.url}/status`);
       const data = await req.json();
-
       this.status = data;
 
     },
     async deleteBurger(id) {
-      const req = await fetch(`http://localhost:3000/burgers/${id}`, {method: "DELETE"});
-
+      const req = await fetch(`${this.url}/burgers/${id}`, {method: "DELETE"});
       const res = await req.json();
-
       this.msg = `Pedido N? ${id} foi removido com sucesso!`;
-
       setTimeout(() => this.msg, 3000);
 
       this.getPedidos();      
     },
     async updateBurger(event, id) {
-      
       const option = event.target.value;
-      
       const dataJson = JSON.stringify({ status: option });
       
-      const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+      const req = await fetch(`${this.url}/burgers/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: dataJson
       });
 
       const res = await req.json();
-
       this.msg = `Pedido N? ${id} foi atualizado para ${res.status}!`;
-
       setTimeout(() => this.msg, 3000);
     }
   },
