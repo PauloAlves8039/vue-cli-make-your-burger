@@ -1,4 +1,4 @@
-<h1 align="center">Make Your Burger</h1>
+<h1 align="center">:hamburger: Make Your Burger</h1>
 
 Projeto web para simular uma aplicação para montagem de pedidos de hambúrgueres, código fonte do projeto foi baseado na playlist
 [Curso de Vue 3](https://www.youtube.com/watch?v=wsAQQioPIJs&list=PLnDvRpP8BnezDglaAvtWgQXzsOmXUuRHL). 
@@ -14,7 +14,7 @@ Projeto web para simular uma aplicação para montagem de pedidos de hambúrguer
 
 ```git clone https://github.com/PauloAlves8039/vue-cli-make-your-burger.git```
 
-## :camera: Screenshot
+## :camera: Screenshots
 
 <p align="center"> <img src="https://github.com/PauloAlves8039/vue-cli-make-your-burger/blob/master/src/assets/images/screenshot-1.PNG"/></p>
 <p align="center"> <img src="https://github.com/PauloAlves8039/vue-cli-make-your-burger/blob/master/src/assets/images/screenshot-2.PNG"/></p>
